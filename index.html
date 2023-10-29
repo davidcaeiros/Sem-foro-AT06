@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Semáforo </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Semáforo </h1>
+        <div id="traffic-light">
+            <img class="light" id="green-light" src="images/verde.png" alt="Green Light">
+            <img class="light" id="yellow-light" src="images/amarelo.png" alt="Yellow Light">
+            <img class="light" id="red-light" src="images/vermelho.png" alt="Red Light">
+            <img class="light" id="off-light" src="images/desligado.png" alt="Desligado Light">
+        </div>
+        <button class="btn-verd" id="btn-green">Verde</button>
+        <button class="btn-amare" id="btn-yellow">Amarelo</button>
+        <button class="btn-verm" id="btn-red">Vermelho</button>
+        <button class="btn-off" id="btn-off">Desligar</button>
+    </div>
+
+    <script>
+        const lights = document.querySelectorAll('.light');
+        const btnGreen = document.getElementById('btn-green');
+        const btnYellow = document.getElementById('btn-yellow');
+        const btnRed = document.getElementById('btn-red');
+        const btnOff = document.getElementById('btn-off');
+
+        function turnOn(light) {
+            lights.forEach((l) => (l.style.display = 'none'));
+            light.style.display = 'block';
+        }
+
+        btnGreen.addEventListener('click', () => turnOn(lights[0]));
+        btnYellow.addEventListener('click', () => turnOn(lights[1]));
+        btnRed.addEventListener('click', () => turnOn(lights[2]));
+        btnOff.addEventListener('click', () => turnOn(lights[3]));
+    </script>
+</body>
+</html>
